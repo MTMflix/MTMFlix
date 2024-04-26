@@ -1,0 +1,29 @@
+.input-wrapper{
+    flex-basis: auto;
+    background-color: dimgray;
+    width: 300%;
+    height: 10%;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px #ddd;
+    display: flex;
+    align-items: center;
+    margin-left: 35%;
+}
+
+input{
+    flex-basis: auto;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin: 0px;
+}
+
+input:focus{
+    outline: none;
+}
+
+#search-icon{
+    padding: 5px;
+    width: auto;
+    height: auto;
+}
