@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import Navbar from "./components/layout/Navbar"
-import Dashboard from "./components/layout/Dashboard"
-import './App.css'
+import './App.css';
+import Navbar from "./components/layout/Navbar";
+import Dashboard from "./components/layout/Dashboard";
 
-class App extends Component {
+class App extends Component{
   render(){
-    return(
+    return (
       <div className="App">
-        <Navbar/>
+        <NavBar/>
         <div className="container">
           <Dashboard/>
-        </div>
-      </div>
-    )
-  };
-};
+       </div>
+    </div>
+    );
+  }
+}
 
 export default App
