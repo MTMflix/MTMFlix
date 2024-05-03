@@ -18,7 +18,11 @@ function SearchBar() {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log(data); 
+      const results = data.results.filter((movie) =>{
+        return movie && movie.title && movie.title.toLowerCase().includes(value)
+      })
+      console.log(results); 
+        
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -26,13 +30,14 @@ function SearchBar() {
 
   const handleChange = (event) => {
     setInput(event.target.value);
+    fetchData(event.target.value);
   };
 
-  const enterKey = (event) => {
-    if (event.key === 'Enter') {
-      fetchData(input); // Pass the current value of input state
-    }
-  };
+//   const enterKey = (event) => {
+//     if (event.key === 'Enter') {
+//       fetchData(input); 
+//     }
+//   };
   
 
   return (
@@ -42,7 +47,7 @@ function SearchBar() {
         placeholder='search next watch '
         value={input}
         onChange={handleChange}
-        onKeyDown={enterKey}
+        // onKeyDown={enterKey}
       />
     </div>
   );
