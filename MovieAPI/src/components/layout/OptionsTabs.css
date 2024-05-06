@@ -15,3 +15,8 @@
 .options-tab-link:hover {
     color: #007bff;
 }
+
+
+.genre-dropdown > .nav-link {
+    padding-left: 0;
+}
