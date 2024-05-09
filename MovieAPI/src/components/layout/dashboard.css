@@ -1,0 +1,12 @@
+.carousel-inner {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+}
+
+.carousel.slide {
+    margin-left: 500px;
+}
+  
