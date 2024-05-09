@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const url = 'https://ott-details.p.rapidapi.com/advancedsearch?start_year=1970&end_year=2020&min_imdb=6&max_imdb=7.8&genre=action&language=english&type=movie&sort=latest';
 const options = {
@@ -13,15 +14,17 @@ const options = {
 
 function SearchBar() {
   const [input, setInput] = useState("");
+  const [movie, setMovie] = useState();
 
   const fetchData = async (value) => {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
       const results = data.results.filter((movie) =>{
-        return movie && movie.title && movie.title.toLowerCase().includes(value)
+        return value && movie && movie.title && movie.title.toLowerCase().includes(value)
       })
-      console.log(results); 
+      setMovie(results[0])
+      console.log(results[0]); 
         
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -30,14 +33,15 @@ function SearchBar() {
 
   const handleChange = (event) => {
     setInput(event.target.value);
-    fetchData(event.target.value);
+    // fetchData(event.target.value);
   };
 
-//   const enterKey = (event) => {
-//     if (event.key === 'Enter') {
-//       fetchData(input); 
-//     }
-//   };
+  const enterKey = (event) => {
+    if (event.key === 'Enter') {
+      fetchData(input); 
+      <Link to="/SearchResults"></Link>
+    }
+  };
   
 
   return (
@@ -47,7 +51,7 @@ function SearchBar() {
         placeholder='search next watch '
         value={input}
         onChange={handleChange}
-        // onKeyDown={enterKey}
+        onKeyDown={enterKey}
       />
     </div>
   );

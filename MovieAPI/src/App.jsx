@@ -4,15 +4,25 @@ import './App.css';
 import Navbar from "./components/layout/Navbar"
 // import Dashboard from "./components/layout/Dashboard";
 import OptionsTabs from "./components/layout/OptionsTabs";
+import SearchResults from "./components/layout/SearchResults";
+// import SearchResults from "./components/layout/SearchResults";
 
 class App extends Component{
   render(){
     return (
-      <div className="App">
-        <Navbar/>
-        <OptionsTabs/>
+      <Router>
+        <div className="App">
+          <Navbar/>
+          <OptionsTabs/>
 
-      </div>
+          {/* <SearchResults results ={results}/> */}
+        </div>
+        <Routes>
+          <Route
+            path="/searchResults"
+            element={<SearchResults/>}/>
+        </Routes>
+      </Router>
     );
   }
 }
