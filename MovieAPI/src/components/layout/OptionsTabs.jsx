@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "./OptionsTabs.css"
-
 import Nav from 'react-bootstrap/Nav'; 
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
