@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { useState, useEffect } from 'react';
 import OptionsTabs from './OptionsTabs';
+import { fetchGenres } from '../../Api';
 
 const GenreList = () => {
     const [genres, setGenres] = useState([]);
@@ -11,7 +12,7 @@ const GenreList = () => {
 
     const fetchGenres = async () => {
         try {
-            const response = await fetch('api');
+            const response = await fetch();
             const data = await response.json();
             setGenres(data.genres);
         } catch (error) {
