@@ -1,19 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './dashboard.css';
-// import React, { useState, useEffect } from 'react';
-
 
 function Dashboard() {
- // const [title, setTitle] = useState([]);
-
-
- // useEffect(() => {
- //   fetch('https://streaming-availability.p.rapidapi.com/search/title')
- //     .then(response => response.json)
- //     .then(data => setTitle(data.map(item => item.titleUrl)));
- // }, []);
-
-
  return (
    <Carousel>
      <Carousel.Item>
