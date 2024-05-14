@@ -1,4 +1,4 @@
-const fetchGenres = async () => {
+/*const fetchGenres = async () => {
     const url = 'https://ott-details.p.rapidapi.com/getParams?param=genre';
     const options = {
         method: 'GET',
@@ -17,4 +17,11 @@ const fetchGenres = async () => {
     }
 };
 
-export { fetchGenres };
+export { fetchGenres }*/
+
+const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
