@@ -1,27 +1,23 @@
-/*const fetchGenres = async () => {
-    const url = 'https://ott-details.p.rapidapi.com/getParams?param=genre';
+export const fetchGenres = async () => {
+    const API_KEY = process.env.MOVIE_API_KEY;
+    const url = `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${API_KEY}`;
+    
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '403b5dd185msh764dbc8b58680d1p14747bjsnd35a6e0df69',
-            'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+            accept: 'application/json'
         }
     };
 
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.genres;
     } catch (error) {
-        console.error(error);
+        console.error('Fetch gernes error:', error);
+        throw error;
     }
 };
-
-export { fetchGenres }*/
-
-const options = {method: 'GET', headers: {accept: 'application/json'}};
-
-fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));

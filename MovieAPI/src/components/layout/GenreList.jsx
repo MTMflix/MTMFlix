@@ -1,25 +1,6 @@
 import React, { Component } from 'react';
-import { useState, useEffect } from 'react';
-import OptionsTabs from './OptionsTabs';
-import { fetchGenres } from '../../Api';
 
-const GenreList = () => {
-    const [genres, setGenres] = useState([]);
-
-    useEffect(() => {
-        fetchGenres();
-    }, []);
-
-    const fetchGenres = async () => {
-        try {
-            const response = await fetch();
-            const data = await response.json();
-            setGenres(data.genres);
-        } catch (error) {
-            console.error('Error fetching genres', error);
-        }
-    };
-
+const GenreList = ({ genres }) => {
     return (
         <div>
             <ul>
