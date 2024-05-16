@@ -1,44 +1,35 @@
-import React, { Component, useState, useEffect } from 'react';
-import "./OptionsTabs.css"
-import Nav from 'react-bootstrap/Nav'; 
+import React, { useState, useEffect } from "react";
+import "./OptionsTabs.css";
+import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import GenreList from './GenreList';
-import { fetchGenres } from '../../Api';
+import GenreList from "./GenreList";
 
-const OptionsTabs = () => {
-  const [genres, setGenres] = useState([]);
+function OptionsTab () {
+    
 
+    
 
-  const fetchGenresData = async () => {
-    try {
-      const genres = await fetchGenres();
-      setGenres(genres);
-    } catch (error) {
-      console.error('Error fetching genres:', error);
-    }
-  };
+    
+    
 
-  useEffect(() => {
-    fetchGenresData();
-  }, []);
+    
 
-  
     return (
-      <div>
-        <Nav defaultActiveKey="/home" className="options-tab flex-column">
-          <Nav.Link className='options-tab-link' href="/home">Home</Nav.Link>
-            <NavDropdown title="Genre" id="basic-nav-dropdown" className="genre-dropdown">
-            
-              <GenreList genres={genres} />
-            </NavDropdown>
+        <div>
+            <Nav defaultActiveKey="/home" className="options-tab flex-column">
+              <Nav.Link className='options-tab-link' href="/home">Home</Nav.Link>
+             <NavDropdown title="Genre" id="basic-nav-dropdown" className="genre-dropdown">
+          
+               <GenreList />
+              
+             </NavDropdown>
             <Nav.Link className='options-tab-link' eventKey="link-2">Top Rated</Nav.Link>
-        </Nav>
-      </div>
+        </Nav>  
+        </div>
     )
-  
+   
 };
 
-export default OptionsTabs;
-
+export default OptionsTab;
 
 
