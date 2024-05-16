@@ -6,10 +6,16 @@ import OptionsTabs from "./components/layout/OptionsTabs";
 // import SearchResults from "./components/layout/SearchResults";
 // import SearchResults from "./components/layout/SearchResults";
 import Dashboard from "./components/layout/Dashboard";
+import MovieList from "./components/movies/MovieList";
 
-class App extends Component{
-  render(){
+function App() {
+  // console.log(process.env.REACT_APP_MOVIE_API_KEY);
     return (
+    // <div>
+    //   <h1>Environment Variables</h1>
+
+    //   <p>{import.meta.env.VITE_MOVIE_API_KEY}</p>
+    // </div>
       // <Router>
         <div className="App">
             <Navbar/>
@@ -18,6 +24,9 @@ class App extends Component{
           </div>
           <div className = "dashboard">
             <Dashboard/>
+          </div>
+          <div className="movies">
+            <MovieList />
           </div>
           {/* <SearchResults results ={results}/> */}
         </div>
@@ -29,6 +38,5 @@ class App extends Component{
       </Router> */
     );
   }
-}
 
 export default App
