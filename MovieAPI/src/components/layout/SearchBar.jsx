@@ -2,13 +2,15 @@ import React, { Component, useState } from 'react';
 import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SearchResults from './SearchResults';
 
-const url = 'https://ott-details.p.rapidapi.com/advancedsearch?start_year=1970&end_year=2020&min_imdb=6&max_imdb=7.8&genre=action&language=english&type=movie&sort=latest';
+const url = `https://ott-details.p.rapidapi.com/advancedsearch?start_year=1970&end_year=2020&min_imdb=6&max_imdb=7.8&genre=action&language=english&type=movie&sort=latest`;
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'ec9ef9a28dmsh275e37278b75032p13c95bjsn38291f0cc22b',
+        'X-RapidAPI-Key': '403b5dd185msh764dbc8b58680d1p14747bjsnd35a6e0df69',
         'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+ 
     }
 };
 
@@ -39,7 +41,6 @@ function SearchBar() {
   const enterKey = (event) => {
     if (event.key === 'Enter') {
       fetchData(input); 
-      <Link to="/SearchResults"></Link>
     }
   };
   
@@ -53,6 +54,7 @@ function SearchBar() {
         onChange={handleChange}
         onKeyDown={enterKey}
       />
+      <SearchResults movie={movie}/>
     </div>
   );
 }

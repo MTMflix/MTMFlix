@@ -1,14 +1,29 @@
-import React, { Component } from 'react'
-import { useState, useEffect } from 'react';
-import { movie } from './SearchBar';
+// SearchResults.jsx
+import React from 'react';
 
 function SearchResults({ movie }) {
+  if (!movie) {
+    return <p>loading</p>; 
+  }
+
+  const { imageurl, genre, imdbid, imdbrating, released, synopsis, title } = movie;
+
   return (
-    <div className='search-result'> {/* Container for single search result */}
-      <img src={movie.imageurl} alt={movie.title} /> {/* Display movie poster */}
-      <h2>{movie.title}</h2> {/* Display movie title */}
-      <p>{movie.synopsis}</p> {/* Display movie overview */}
-      {/* Add more details as needed (release date, genre, etc.) */}
+    <div className="search-result">
+      <img src={imageurl[0]} alt={`${title} poster`} /> 
+      <div className="info">
+        <h2>{title}</h2>
+        <p>
+          Genre: {genre.join(', ')} 
+        </p>
+        <p>
+          Rating: {imdbrating} (IMDb)
+        </p>
+        <p>Released: {released}</p>
+        <p>{synopsis}</p>
+      </div>
     </div>
   );
 }
+
+export default SearchResults;
