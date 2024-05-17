@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./OptionsTabs.css";
 
 function TopRatedList () {
@@ -36,7 +37,7 @@ function TopRatedList () {
                 <ul>
                     {topRated.map((movie) => (
                         <li key={movie.id}>
-                            {movie.title}
+                            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
                         </li>
                     ))}
                 </ul>
