@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MovieContainer from "./MovieContainer";
 
 
 function MovieList () {
@@ -7,7 +8,12 @@ function MovieList () {
     const {VITE_MOVIE_API_KEY} = import.meta.env;
 
     const [movieList, setMovieList] = useState([]);
-    const [select, setSelect] = useState("");
+    const [selectedMovie, setSelectedMovie] = useState(null);
+    // Tracks the movies details loading state
+    const [isLoading, setIsLoading] = useState(false);
+    // Tracks API errors
+    const [error, setError] = useState(null);
+
 
     const getMovieList = async() => {
         try {
@@ -19,16 +25,28 @@ function MovieList () {
         }
     }
 
+    function changeMovieData(data) {
+        const list = [];
+        for (let i = 0; i < movieList.length; i++) {
+            if (movieList[i].id == data.id) {
+                list.push(data)
+            } else {
+                list.push(movieList[i])
+            }
+        }
+        setMovieList(list);
+    }
+
     useEffect(() => {
         getMovieList()
     }, [])
+      
 
     return (
         <div>
-            <button onClick={() => setSelect("movie")}>Movie</button>
             {movieList.map((data) => {
                 return <>
-                <img style={{width:"300px", height:"250px", marginTop:"10px", marginLeft:"10px"}} src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`} />
+                <MovieContainer data={data} changeMovieData={changeMovieData} />
                 </>
             })}
         </div>
