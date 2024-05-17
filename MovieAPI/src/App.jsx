@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Navbar from "./components/layout/Navbar"
@@ -19,9 +20,12 @@ function App() {
       // <Router>
         <div className="App">
             <Navbar/>
-          <div className="options">
-            <OptionsTabs/>
-          </div>
+            <BrowserRouter>
+              <div className="options">
+                <OptionsTabs/>
+              </div>
+            </BrowserRouter>
+          
           <div className = "dashboard">
             <Dashboard/>
           </div>
