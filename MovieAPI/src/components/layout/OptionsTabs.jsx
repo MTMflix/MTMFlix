@@ -3,6 +3,7 @@ import "./OptionsTabs.css";
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import GenreList from "./GenreList";
+import TopRatedList from "./TopRatedList";
 
 function OptionsTab () {
     
@@ -18,13 +19,15 @@ function OptionsTab () {
         <div>
             <Nav defaultActiveKey="/home" className="options-tab flex-column">
               <Nav.Link className='options-tab-link' href="/home">Home</Nav.Link>
-             <NavDropdown title="Genre" id="basic-nav-dropdown" className="genre-dropdown">
+              <NavDropdown title="Genre" id="basic-nav-dropdown" className="genre-dropdown">
           
-               <GenreList />
+                <GenreList />
               
-             </NavDropdown>
-            <Nav.Link className='options-tab-link' eventKey="link-2">Top Rated</Nav.Link>
-        </Nav>  
+              </NavDropdown>
+              <NavDropdown title="Top Rated" id='basic-nav-dropdown'className='topRated-dropdown'>
+                <TopRatedList />
+              </NavDropdown>
+            </Nav>  
         </div>
     )
    
