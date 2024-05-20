@@ -36,9 +36,9 @@ function TopRatedList () {
             ) : (
                 <ul>
                     {topRated.map((movie) => (
-                        <li key={movie.id}>
+                        <Link key={movie.id} to={`/movies/${movie.id}`}>
                             <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-                        </li>
+                        </Link>
                     ))}
                 </ul>
             )}

@@ -8,24 +8,23 @@ import OptionsTabs from "./components/layout/OptionsTabs";
 // import SearchResults from "./components/layout/SearchResults";
 import Dashboard from "./components/layout/Dashboard";
 import MovieList from "./components/movies/MovieList";
+import GenreList from "./components/layout/GenreList";
+import TopRatedList from "./components/layout/TopRatedList";
 
 function App() {
   // console.log(process.env.REACT_APP_MOVIE_API_KEY);
     return (
-    // <div>
-    //   <h1>Environment Variables</h1>
-
-    //   <p>{import.meta.env.VITE_MOVIE_API_KEY}</p>
-    // </div>
-      // <Router>
+      <BrowserRouter>
         <div className="App">
             <Navbar/>
-            <BrowserRouter>
-              <div className="options">
-                <OptionsTabs/>
-              </div>
-            </BrowserRouter>
-          
+          <div className="options">
+            <OptionsTabs/>
+          </div>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/genres/:genreId" />
+            <Route path="/top-rated" element={<TopRatedList />} />
+          </Routes>
           <div className = "dashboard">
             <Dashboard/>
           </div>
@@ -34,12 +33,7 @@ function App() {
           </div>
           {/* <SearchResults results ={results}/> */}
         </div>
-        /* <Routes>
-          <Route
-            path="/searchResults"
-            element={<SearchResults/>}/>
-        </Routes>
-      </Router> */
+      </BrowserRouter>
     );
   }
 
