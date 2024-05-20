@@ -1,5 +1,6 @@
  .App{
   grid-template-columns: fit-content(100%);
+  background-color: rgba(13, 13, 13, 0.928);
 }
 
 

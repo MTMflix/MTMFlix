@@ -1,13 +1,13 @@
 .input-wrapper{
     flex-basis: auto;
     background-color: dimgray;
-    width: 300%;
-    height: 10%;
+    width: 55%;
+    height: 25%;
     border-radius: 50px;
     box-shadow: 0px 0px 8px #ddd;
     display: flex;
     align-items: center;
-    margin-left: 35%;
+    margin-left: 10%;
 }
 
 input{
@@ -26,4 +26,5 @@ input:focus{
     padding: 5px;
     width: auto;
     height: auto;
+    color: white;
 }
