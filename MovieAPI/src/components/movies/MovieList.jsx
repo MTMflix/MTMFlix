@@ -6,6 +6,7 @@ function MovieList () {
 
     
     const {VITE_MOVIE_API_KEY} = import.meta.env;
+    // console.log({VITE_MOVIE_API_KEY})
 
     const [movieList, setMovieList] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
