@@ -10,6 +10,7 @@ import Dashboard from "./components/layout/Dashboard";
 import MovieList from "./components/movies/MovieList";
 import GenreList from "./components/layout/GenreList";
 import TopRatedList from "./components/layout/TopRatedList";
+import TopRatedDetails from "./components/layout/TopRatedDetails";
 
 function App() {
   // console.log(process.env.REACT_APP_MOVIE_API_KEY);
@@ -22,8 +23,9 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/genres/:genreId" element={<GenreList />}/>
+            <Route path="/genres/:genreId" />
             <Route path="/top-rated" element={<TopRatedList />} />
+            <Route path="/movies/:movieId" element={<TopRatedDetails />} />
           </Routes>
           <div className = "dashboard">
             <Dashboard/>
