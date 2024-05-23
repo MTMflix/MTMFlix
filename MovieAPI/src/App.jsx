@@ -22,7 +22,7 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/genres/:genreId" />
+            <Route path="/genres/:genreId" element={<GenreList />}/>
             <Route path="/top-rated" element={<TopRatedList />} />
           </Routes>
           <div className = "dashboard">
