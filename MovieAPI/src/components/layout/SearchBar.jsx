@@ -3,14 +3,11 @@ import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const url = 'https://ott-details.p.rapidapi.com/advancedsearch?start_year=1970&end_year=2020&min_imdb=6&max_imdb=7.8&genre=action&language=english&type=movie&sort=latest';
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'ec9ef9a28dmsh275e37278b75032p13c95bjsn38291f0cc22b',
-        'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
-    }
-};
+const {searchKey} = import.meta.env;
+const {searchPoint} = import.meta.env;
+
+const url = searchPoint;
+
 
 function SearchBar() {
   const [input, setInput] = useState("");
@@ -18,11 +15,9 @@ function SearchBar() {
 
   const fetchData = async (value) => {
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, searchKey);
       const data = await response.json();
-      const results = data.results.filter((movie) =>{
-        return value && movie && movie.title && movie.title.toLowerCase().includes(value)
-      })
+      const results = data.results;
       setMovie(results[0])
       console.log(results[0]); 
         
@@ -33,15 +28,17 @@ function SearchBar() {
 
   const handleChange = (event) => {
     setInput(event.target.value);
+    console.log(event.target.value)
     // fetchData(event.target.value);
   };
 
-  const enterKey = (event) => {
-    if (event.key === 'Enter') {
-      fetchData(input); 
-      <Link to="/SearchResults"></Link>
-    }
-  };
+//taking out enter sign for now
+  // const enterKey = (event) => {
+  //   if (event.key === 'Enter') {
+  //     fetchData(input); 
+  //     <Link to="/SearchResults"></Link>
+  //   }
+  // };
   
 
   return (
@@ -51,7 +48,7 @@ function SearchBar() {
         placeholder='search next watch '
         value={input}
         onChange={handleChange}
-        onKeyDown={enterKey}
+        // onKeyDown={enterKey}
       />
     </div>
   );
