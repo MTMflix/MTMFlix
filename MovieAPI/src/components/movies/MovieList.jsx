@@ -41,11 +41,6 @@ function MovieList () {
         getMovieList()
     }, [])
       
-
-    useEffect(() => {
-        console.log("Search value:", searchValue);
-      }, [searchValue])
-
     return (
         <div>
             {movieList.map((data) => {
