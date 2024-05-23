@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Navbar from "./components/layout/Navbar";
@@ -9,7 +10,7 @@ import GenreList from "./components/layout/GenreList";
 import TopRatedList from "./components/layout/TopRatedList";
 
 function App() {
-  // console.log(process.env.REACT_APP_MOVIE_API_KEY);
+  
     return (
       <BrowserRouter>
         <div className="App">
@@ -17,11 +18,6 @@ function App() {
           <div className="options">
             <OptionsTabs/>
           </div>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/genres/:genreId" element={<GenreList />}/>
-            <Route path="/top-rated" element={<TopRatedList />} />
-          </Routes>
           <div className = "dashboard">
             <Dashboard/>
           </div>
@@ -29,8 +25,11 @@ function App() {
             <MovieList />
           </div>
         </div>
+        
       </BrowserRouter>
+
     );
   }
+          
 
 export default App
