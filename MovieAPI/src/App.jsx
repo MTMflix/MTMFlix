@@ -8,6 +8,7 @@ import Dashboard from "./components/layout/Dashboard";
 import MovieList from "./components/movies/MovieList";
 import GenreList from "./components/layout/GenreList";
 import TopRatedList from "./components/layout/TopRatedList";
+import TopRatedDetails from "./components/layout/TopRatedDetails";
 
 function App() {
   
