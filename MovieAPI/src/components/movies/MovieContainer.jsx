@@ -1,5 +1,6 @@
 import React from "react";
 import MovieDetails from "./MovieDetails";
+import { FaBuysellads } from "react-icons/fa";
 
 function MovieContainer(props) {
 
@@ -11,7 +12,9 @@ function MovieContainer(props) {
     }
 
     if (data.showDetails) {
-        return <MovieDetails data={data}/>
+        return <MovieDetails 
+        data={data}
+        />
     } else {
         return <img 
                 style={{width:"300px", height:"250px", marginTop:"10px", marginLeft:"10px"}} 

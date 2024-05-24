@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieContainer from "./MovieContainer";
+import MovieDetails from "./MovieDetails";
 
 
 function MovieList () {
@@ -10,10 +11,11 @@ function MovieList () {
 
     const [movieList, setMovieList] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [movies, setMovies] = useState(null);
     // Tracks the movies details loading state
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     // Tracks API errors
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
 
 
     const getMovieList = async() => {
@@ -24,6 +26,10 @@ function MovieList () {
         } catch (err) {
             console.error(err)
         }
+    }
+
+    const clickToBack = () => {
+        setSelectedMovie(null);
     }
 
     function changeMovieData(data) {
@@ -47,9 +53,14 @@ function MovieList () {
         <div>
             {movieList.map((data) => {
                 return <>
-                <MovieContainer data={data} changeMovieData={changeMovieData} />
+                <MovieContainer 
+                data={data}
+                changeMovieData={changeMovieData}
+                onBack={clickToBack}
+                />
                 </>
             })}
+            {selectedMovie && <MovieDetails movies={selectedMovie} onBack={clickToBack} />}
         </div>
     )
 }
