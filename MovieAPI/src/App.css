@@ -1,5 +1,6 @@
  .App{
   grid-template-columns: fit-content(100%);
+  background-color: rgba(13, 13, 13, 0.928);
 }
 
 
@@ -17,4 +18,8 @@
 
 .options.dashboard{
   align-items: center;
+}
+
+.hidden{
+  display: none;
 }
