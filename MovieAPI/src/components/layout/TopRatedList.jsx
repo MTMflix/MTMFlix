@@ -39,20 +39,14 @@ function TopRatedList () {
 
     return (
         <div>
-            
-            {topRated.length === 0 ? (
-                <p>Loading top rated movies...</p>
-            ) : (
-                <ul>
-                    {topRated.map((movie) => (
-                        <li key={movie.id}>
-                            <Link to={`/movies/${movie.id}`} onClick={() => handleClick(movie.id)}>{movie.title}</Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {topRated.map((movie) => (
+                    <div key={movie.id}>
+                        <p>{movie.title}</p>
+                        <button onClick={() => handleClick(movie.id)}>Details</button>
+                    </div>
+                ))}
         </div>
-    )
+    );
 
     
 };
