@@ -1,9 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 import './dashboard.css';
+import MovieList from '../movies/MovieList';
 
 function Dashboard() {
  return (
+  <>
    <Carousel>
      <Carousel.Item>
        <img
@@ -214,6 +216,8 @@ function Dashboard() {
        </Carousel.Caption>
      </Carousel.Item>
    </Carousel>
+   <MovieList />
+   </>
  );
 }
 
