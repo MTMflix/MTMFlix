@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Navbar from "./components/layout/Navbar";
@@ -18,16 +18,16 @@ function App() {
         <div className="options">
           <OptionsTabs />
         </div>
-        <div className="dashboard">
-          <Dashboard />
-        </div>
-        <div className="movies">
-          <MovieList />
-        </div>
+       
+       
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="/top-rated" element={<TopRatedList />} />
           <Route path="/movies/:movieId" element={<TopRatedDetails />} />
         </Routes>
+        
+        <Outlet />
+
       </div>
     </BrowserRouter>
       

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "./OptionsTabs.css";
 
 function TopRatedList () {
@@ -30,11 +30,15 @@ function TopRatedList () {
         getTopRated(currentPage);
     }, [currentPage]);
 
+    const navigate = useNavigate();
+   
+
     const handleClick = (movieId) => {
-        const navigate = useNavigate();
+        
         navigate(`/movies/${movieId}`);
     };
 
+    
    
 
     return (
