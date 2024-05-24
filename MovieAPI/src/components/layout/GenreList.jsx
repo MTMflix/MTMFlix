@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 const GenreList = () => {
     const { VITE_MOVIE_API_KEY } = import.meta.env
@@ -29,7 +30,9 @@ const GenreList = () => {
         <div>
             <ul>
                 {genres.map(genre => (
-                    <li key={genre.id}>{genre.name}</li>
+                    <li key={genre.id}>
+                        <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
+                    </li>
                 ))}
             </ul>
         </div>
