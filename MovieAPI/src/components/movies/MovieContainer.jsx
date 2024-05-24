@@ -1,6 +1,5 @@
 import React from "react";
 import MovieDetails from "./MovieDetails";
-import { FaBuysellads } from "react-icons/fa";
 
 function MovieContainer(props) {
 
