@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "./OptionsTabs.css";
+import "./TopRated.css";
 
 function TopRatedList () {
     const { VITE_MOVIE_API_KEY } = import.meta.env
