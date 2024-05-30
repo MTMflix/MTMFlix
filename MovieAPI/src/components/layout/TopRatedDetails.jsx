@@ -24,7 +24,27 @@ function TopRatedDetails() {
 
     return (
         <div>
-            <h2>{movieDetails.title}</h2>
+            <div className="container">
+                <div className="row">
+                    <div className="cool-md-4">
+                        {movieDetails.poster_path && (
+                            <img
+                            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+                            alt={movieDetails.title}
+                            className="img-fluid"
+                            />
+                        )}
+                    </div>
+                    <div className="col-md-8">
+                        <h2>{movieDetails.title}</h2>
+                        <p>Release Date: {movieDetails.release_date}</p>
+                        <p>{movieDetails.overview}</p>
+                        <p>{movieDetails.genre}</p>
+                        
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
