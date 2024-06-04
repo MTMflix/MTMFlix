@@ -1,8 +1,30 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MTMFlix
+MTMFlix App is made with pure Javascript, CSS, HTML, React, Vite and Bootstrap.
+MTMFlix is a web application designed to help you find where your favorite movies are available to stream. Tired of searching through multiple streaming services to see ig a movie is available? MTMFlix makes it easy!
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Search for Movies: Enter the title of a movie to see where it's streaming.
+- Up-to-Date Streaming Information: MTMFlix strives to provide the most      current information on where movies are available to stream.
+- User-Friendly Interface: The application is designed to be simple and intuitive to use.
+
+## Screenshots
+
+## Development
+
+## Authors 
+- Micheal Vela - [GitHub](https://github.com/Mikevela)
+- Tina Sun - [GitHub](https://github.com/sun-tina)
+- Meagan Hollingsworth - [GitHub](https://github.com/INKYGIRLnTech)
+
+## Acknowledgment
+- Laurie Corrin 
+- Figma
+
+## Getting Started
+1. `npm install`
+2. `npm run seed`
+3. `npm run dev`
