@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import MTMflix_logo from './logo/MTMflix_logo.png'
 import SearchBar from './SearchBar';
+import Nav from 'react-bootstrap/Nav';
 
 
 function Navbar(){
@@ -13,7 +15,15 @@ function Navbar(){
                     <img src={MTMflix_logo} alt="MTMflix logo"/>
                     </a>
                     <h1 className="navbar-brand"><SearchBar setResults={setResults}/></h1>
-                    </nav>
+                    <Nav className="ms-auto">
+                        <NavLink 
+                        className='nav-link' 
+                        activeClassName='active'
+                        to="/top-rated">
+                            Top Rated
+                        </NavLink>
+                    </Nav>
+                </nav>
                 
             </div>
         )

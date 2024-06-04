@@ -24,7 +24,7 @@ function TopRatedList () {
         } catch (err) {
             console.err(err);
         }
-    };
+    }; 
 
     useEffect(() => {
         getTopRated(currentPage);
