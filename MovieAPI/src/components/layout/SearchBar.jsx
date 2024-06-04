@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const {searchKey} = import.meta.env;
 const {searchPoint} = import.meta.env;
@@ -40,6 +40,11 @@ function SearchBar() {
   //   }
   // };
   
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/search');
+};
 
   return (
     <div className='input-wrapper'>
@@ -48,6 +53,8 @@ function SearchBar() {
         placeholder='search next watch '
         value={input}
         onChange={handleChange}
+        onClick={() => handleClick()}
+        
         // onKeyDown={enterKey}
       />
     </div>
