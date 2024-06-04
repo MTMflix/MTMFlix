@@ -1,0 +1,32 @@
+s
+
+.row {
+    display: flex;
+}
+
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+.movie-poster img {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.movie-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.movie-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.movie-details p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}

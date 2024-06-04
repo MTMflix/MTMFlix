@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import "./OptionsTabs.css";
+import "./TopRated.css";
 
 function TopRatedList () {
     const { VITE_MOVIE_API_KEY } = import.meta.env
@@ -24,7 +24,7 @@ function TopRatedList () {
         } catch (err) {
             console.err(err);
         }
-    };
+    }; 
 
     useEffect(() => {
         getTopRated(currentPage);
@@ -42,14 +42,25 @@ function TopRatedList () {
    
 
     return (
-        <div>
-            {topRated.map((movie) => (
-                    <div key={movie.id}>
+        <div className="container">
+            <div className="row">
+                {topRated.map((movie) => (
+                    <div key={movie.id} className="col-md-4 mb-3">
+                        {movie.poster_path && (
+                             <img
+                             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                             alt={movie.title}
+                             className="img-fluid"
+                             />
+                        )}
                         <p>{movie.title}</p>
                         <button onClick={() => handleClick(movie.id)}>Details</button>
                     </div>
                 ))}
+            </div>
         </div>
+            
+        
     );
 
     
