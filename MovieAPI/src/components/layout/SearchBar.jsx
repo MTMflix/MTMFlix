@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
@@ -10,52 +10,29 @@ const url = searchPoint;
 
 
 function SearchBar() {
-  const [input, setInput] = useState("");
-  const [movie, setMovie] = useState();
-
-  const fetchData = async (value) => {
-    try {
-      const response = await fetch(url, searchKey);
-      const data = await response.json();
-      const results = data.results;
-      setMovie(results[0])
-      console.log(results[0]); 
-        
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  const handleChange = (event) => {
-    setInput(event.target.value);
-    console.log(event.target.value)
-    // fetchData(event.target.value);
-  };
-
-//taking out enter sign for now
-  // const enterKey = (event) => {
-  //   if (event.key === 'Enter') {
-  //     fetchData(input); 
-  //     <Link to="/SearchResults"></Link>
-  //   }
-  // };
-  
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/search');
-};
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+    if (searchTerm.length >=1){
+      navigate('/search', { state: { searchTerm } })}; 
+    console.log(event.target.value)
+  };
+
+  // const handleClick = () => {
+  //   if (searchTerm.length >=1){
+  //   navigate('/search', { state: { searchTerm } })}; 
+  // };
 
   return (
     <div className='input-wrapper'>
       <FaSearch id='search-icon' />
       <input
         placeholder='search next watch '
-        value={input}
+        value={searchTerm}
         onChange={handleChange}
-        onClick={() => handleClick()}
-        
-        // onKeyDown={enterKey}
+        // onClick={() => handleClick()}
       />
     </div>
   );
