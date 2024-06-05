@@ -15,15 +15,11 @@ function SearchBar() {
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-    if (searchTerm.length >=1){
+    if (searchTerm.length >=0){
       navigate('/search', { state: { searchTerm } })}; 
     console.log(event.target.value)
   };
 
-  // const handleClick = () => {
-  //   if (searchTerm.length >=1){
-  //   navigate('/search', { state: { searchTerm } })}; 
-  // };
 
   return (
     <div className='input-wrapper'>
@@ -32,7 +28,6 @@ function SearchBar() {
         placeholder='search next watch '
         value={searchTerm}
         onChange={handleChange}
-        // onClick={() => handleClick()}
       />
     </div>
   );
