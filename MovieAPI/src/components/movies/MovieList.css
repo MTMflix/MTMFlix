@@ -10,6 +10,8 @@
     align-items: center;
 }
 
-.movieGrid{
-    padding: 70px;
+.movieGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
 }
