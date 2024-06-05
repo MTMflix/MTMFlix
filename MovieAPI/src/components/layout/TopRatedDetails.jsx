@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./RatedDetails.css";
+import "./TopRated.css";
 
 function TopRatedDetails() {
     const { VITE_MOVIE_API_KEY } = import.meta.env;

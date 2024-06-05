@@ -25,7 +25,16 @@ function Navbar(){
                         <NavLink 
                         className='nav-link' 
                         activeClassName='active'
-                        to="/top-rated">
+                        to="/top-rated"
+                        style={{
+                            color: 'fff',
+                            fontWeight: 'bold',
+                            textDecoration: 'none',
+                            paddingRight: '1rem',
+                            marginRight: '1rem',
+                            borderRight:'1px solid #ddd',
+                        }}>
+                        
                             Top Rated
                         </NavLink>
                     </Nav>
