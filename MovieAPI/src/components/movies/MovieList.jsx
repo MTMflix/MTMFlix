@@ -3,11 +3,10 @@ import MovieContainer from "./MovieContainer";
 import "./MovieList.css";
 
 function MovieList() {
-    const {VITE_MOVIE_API_KEY} = import.meta.env;  
+  const {VITE_MOVIE_API_KEY} = import.meta.env;  
 
   const [movieList, setMovieList] = useState([]);
   const [error, setError] = useState(null);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
@@ -27,7 +26,7 @@ function MovieList() {
     };
 
     getMovieList();
-  }, [currentPage]); 
+  }, [currentPage]);
 
   const previousPage = () => {
     if (currentPage > 1) {
@@ -41,14 +40,31 @@ function MovieList() {
     }
   };
 
+  function changeMovieData(data) {
+    const list = [];
+    for (let i = 0; i < movieList.length; i++) {
+      if (movieList[i].id == data.id) {
+        list.push(data)
+      } else {
+        list.push(movieList[i])
+      }
+    }
+    setMovieList(list);
+  }
+
 
   return (
     <div>
         <>
-          <div className="movieGrid">
-            {movieList.map((data) => (
-              <MovieContainer key={data.id} data={data} />
-            ))}
+        <div className="movieGrid">
+            {movieList.map((data) => {
+              return <>
+              <MovieContainer 
+              data={data} 
+              changeMovieData={changeMovieData} 
+              />
+              </>
+            })}
           </div>
 
           <div className="buttons">
