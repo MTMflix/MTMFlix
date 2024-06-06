@@ -42,7 +42,7 @@ function TopRatedList () {
    
 
     return (
-        <div className="container">
+        <div className="container" style={{ marginTop: "10vw"}}>
             <h2>Top Rated Movies</h2>
             <div className="row">
                 {topRated.map((movie) => (

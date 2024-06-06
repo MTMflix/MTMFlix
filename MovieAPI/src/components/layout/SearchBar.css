@@ -16,8 +16,7 @@ input{
     flex-basis: auto;
     background-color: transparent;
     border: none;
-    width: 100%;
-    margin: 0px;
+    width: 23vw;
 }
 
 input:focus{
