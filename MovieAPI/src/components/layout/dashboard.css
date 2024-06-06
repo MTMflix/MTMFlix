@@ -1,12 +1,11 @@
-.carousel-inner {
-    width: 500px;
-    height: 500px;
+.carousel-container {
     display: flex;
-    object-fit: cover;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    filter: blur(50px);
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0) 0 10px rgba(0, 0, 0, 0.3);
 }
-
-.carousel.slide {
-    margin-left: 200px;
+.carousel-img {
+    box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0) 0 5px rgba(0, 0, 0, 0.3); /* Blend with background */
 }
-  
