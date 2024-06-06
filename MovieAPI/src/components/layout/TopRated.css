@@ -1,20 +1,61 @@
-.topRated-dropdown > .nav-link {
-    padding-left: 10px;
-}
-
-.container .row .col-md-4 {
+.container  .row .col-md-4 {
+    max-width: 40%;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     transition: all 0.2s ease-in-out;
 }
 
-.container .row .col-md-4:hover {
-    background-color: #eee;
+.img-fluid {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.movie-poster {
+    padding: 10px;
+    margin-top: 90px;
+    max-width: 500px;
+}
+
+p{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: inherit;
 }
 
 .container .row .col-md-4 p {
     color: #ed0909;
-    font-size: 18px; 
+    font-size: 18px;
     margin-bottom: 5px;
+}
+
+
+
+
+
+
+.container .row .col-md-4:hover {
+    background-color: #eee;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.movie-date {
+    background-color: #ddd;
+}
+
+.movie-overview {
+    color:#ddd;
+    font-size: 18px;
+    background-color: #333;
 }

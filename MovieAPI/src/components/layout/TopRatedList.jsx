@@ -43,6 +43,7 @@ function TopRatedList () {
 
     return (
         <div className="container">
+            <h2>Top Rated Movies</h2>
             <div className="row">
                 {topRated.map((movie) => (
                     <div key={movie.id} className="col-md-4 mb-3">
