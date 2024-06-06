@@ -9,12 +9,8 @@
 
 
 .dashboard {
-  flex: 1;
-  margin: 20px;
-  padding:20px;
-  /* margin: auto; */
-  /* width: 50%; */
-  /* padding-bottom: 100px; */
+  margin-left: 50vw;
+  margin-left: 50vw;
 }
 
 .options{
