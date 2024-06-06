@@ -18,33 +18,3 @@ function MovieListModal({ data, closeModal }) {
 }
 
 export default MovieListModal;
-
-// export default function MovieListModal() {
-
-//     const [movieDetails, setMovieDetails] = useState(null);
-
-//     useEffect
-
-//     return (
-//         <div>
-//             <div className="container">
-//                 <div className="row">
-//                     <div className="cool-md-4">
-//                         {movieDetails.poster_path && (
-//                             <img
-//                             src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
-//                             alt={movieDetails.title}
-//                             className="img-fluid"
-//                             />
-//                         )}
-//                     </div>
-//                     <div className="col-med-8">
-//                         <h2>{MovieDetails.title}</h2>
-//                         <p>Release D</p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-

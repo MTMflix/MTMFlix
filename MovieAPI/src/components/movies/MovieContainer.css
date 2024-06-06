@@ -1,10 +1,13 @@
 .movie-container {
     text-align: center;
     margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
   }
   
 .movie-container img {
     width: 250px;
     height: 350px;
-    border-radius: 5px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
