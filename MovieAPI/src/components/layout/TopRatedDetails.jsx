@@ -10,10 +10,18 @@ function TopRatedDetails() {
 
     useEffect(() => {
         const getMovieDetails = async () => {
-            const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${VITE_MOVIE_API_KEY}`;
-            const response = await fetch(url);
-            const data = await response.json();
-            setMovieDetails(data);
+            try {
+                const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${VITE_MOVIE_API_KEY}&append_to_response=watch/providers`;
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                const data = await response.json();
+                setMovieDetails(data); 
+            } catch (error) {
+                console.error('Error fetching movie details:', error);
+            }
+            
         };
 
         getMovieDetails();
@@ -32,15 +40,30 @@ function TopRatedDetails() {
                             <img
                             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
                             alt={movieDetails.title}
-                            className="img-fluid"
+                            className="movie-poster"
                             />
                         )}
                     </div>
                     <div className="col-md-8">
                         <h2>{movieDetails.title}</h2>
-                        <p>Release Date: {movieDetails.release_date}</p>
-                        <p>{movieDetails.overview}</p>
-                        <p>{movieDetails.genre}</p>
+                        <p className="movie-date">Release Date: {movieDetails.release_date}</p>
+                        <p className="movie-overview">{movieDetails.overview}</p>
+                        {movieDetails.watch_providers && movieDetails.watch_providers.results && (
+                            <div>
+                                <h2>Streaming Services</h2>
+                                <ul>
+                                    {Object.entries(movieDetails.watch_providers.results).map(([countryCode, providers]) => (
+                                        <li key={countryCode}>
+                                            {countryCode === 'US' && providers.flat().length > 0 && providers.flat().map((service) => (
+                                                <span key={service.id}>{service.display_name}</span>
+                                            ))}
+                                            {countryCode === 'US' && providers.flat().length === 0 && <p className="movie-streaming">No streaming services found in your region. </p>}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {!movieDetails.watch_providers && <p>Streaming provider information unavailable.</p>}
                         
 
                     </div>

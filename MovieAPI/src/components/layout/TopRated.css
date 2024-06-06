@@ -1,4 +1,5 @@
 .container  .row .col-md-4 {
+    max-width: 40%;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
@@ -6,9 +7,15 @@
 }
 
 .img-fluid {
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     
+}
+
+.movie-poster {
+    padding: 10px;
+    margin-top: 90px;
+    max-width: 500px;
 }
 
 p{
@@ -41,4 +48,14 @@ h2 {
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.movie-date {
+    background-color: #ddd;
+}
+
+.movie-overview {
+    color:#ddd;
+    font-size: 18px;
+    background-color: #333;
 }
