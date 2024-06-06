@@ -48,22 +48,7 @@ function TopRatedDetails() {
                         <h2>{movieDetails.title}</h2>
                         <p className="movie-date">Release Date: {movieDetails.release_date}</p>
                         <p className="movie-overview">{movieDetails.overview}</p>
-                        {movieDetails.watch_providers && movieDetails.watch_providers.results && (
-                            <div>
-                                <h2>Streaming Services</h2>
-                                <ul>
-                                    {Object.entries(movieDetails.watch_providers.results).map(([countryCode, providers]) => (
-                                        <li key={countryCode}>
-                                            {countryCode === 'US' && providers.flat().length > 0 && providers.flat().map((service) => (
-                                                <span key={service.id}>{service.display_name}</span>
-                                            ))}
-                                            {countryCode === 'US' && providers.flat().length === 0 && <p className="movie-streaming">No streaming services found in your region. </p>}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        {!movieDetails.watch_providers && <p>Streaming provider information unavailable.</p>}
+                        
                         
 
                     </div>
