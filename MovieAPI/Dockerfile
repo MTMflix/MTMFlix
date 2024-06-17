@@ -1,5 +1,6 @@
 FROM node:18
-COPY . /MovieAPI
-WORKDIR /MovieAPI
+COPY . /app 
+WORKDIR /app
 RUN npm install
-CMD [ "npm", "start" ]
+EXPOSE 5178
+CMD [ "npm", "run", "dev"]
