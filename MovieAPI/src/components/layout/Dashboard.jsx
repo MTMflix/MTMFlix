@@ -7,6 +7,7 @@ function Dashboard() {
  return (
   <>
   <div className="carousel-containter" style={{ marginTop: "10vw", marginLeft: "20vw", marginBottom: "5vw",  width: '800px', height: '500px' }}>
+    <h1>EDITOR'S PICKS</h1>
     <Carousel>
       <Carousel.Item>
         <img
