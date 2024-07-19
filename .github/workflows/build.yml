@@ -11,8 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: install dependency
         run: npm install
+        working-directory: ./MovieAPI
 
       - name: Build
         run: npm run dev
