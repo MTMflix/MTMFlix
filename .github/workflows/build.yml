@@ -16,5 +16,5 @@ jobs:
         working-directory: ./MovieAPI
 
       - name: Build
-        run: npm run dev
+        run: npm run Build
         working-directory: ./MovieAPI
