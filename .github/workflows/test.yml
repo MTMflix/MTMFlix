@@ -17,5 +17,5 @@ jobs:
         working-directory: ./MovieAPI
 
       - name: Test
-        run: npm test
+        run: npx vitest
         working-directory: ./MovieAPI
