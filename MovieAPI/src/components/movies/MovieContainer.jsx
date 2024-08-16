@@ -17,7 +17,7 @@ function MovieContainer(props) {
     return (
         <div>
             <img 
-            style={{ width: "300px", height: "250px", marginTop: "10px", marginLeft: "10px" }}
+            style={{ width: "275px", height: "350px", marginTop: "50px", marginLeft: "50px", marginRight: "50px" }}
             src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
             onClick={handleClick}
             />
