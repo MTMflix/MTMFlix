@@ -41,6 +41,18 @@ describe('SearchBar', () => {
     
       expect(mockNavigate).not.toHaveBeenCalled();
     });
+
+    it('renders search input with placeholder', async() => {
+      await act (async () => {
+        render(
+          <BrowserRouter>
+            <SearchBar />
+          </BrowserRouter>
+          );
+      });
+      const inputElement = screen.getByRole('textbox');
+      expect(inputElement).toHaveAttribute('placeholder', 'search next watch ');
+    });
   });
 
   
