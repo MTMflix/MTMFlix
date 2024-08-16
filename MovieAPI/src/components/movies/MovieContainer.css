@@ -12,11 +12,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
-  #quickview{
-    flex: auto;
-    margin-left: 3.7vw;
+  #quickview {
+    margin-left: 27%; 
   }
- 
-  #like{
-    margin-left: 2.5vw;
+  
+  #like {
+    margin-left: 13%; 
   }
