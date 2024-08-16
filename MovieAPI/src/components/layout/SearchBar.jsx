@@ -3,10 +3,10 @@ import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
-const {searchKey} = import.meta.env;
-const {searchPoint} = import.meta.env;
+// const {searchKey} = import.meta.env;
+// const {searchPoint} = import.meta.env;
 
-const url = searchPoint;
+// const url = searchPoint;
 
 
 function SearchBar() {
