@@ -46,7 +46,7 @@ function TopRatedList () {
             <h2>Top Rated Movies</h2>
             <div className="row">
                 {topRated.map((movie) => (
-                    <div key={movie.id} className="col-md-4 mb-3">
+                    <div key={movie.id} className="col-md-4 mb-3" data-testid="movie-container">
                         {movie.poster_path && (
                              <img
                              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
