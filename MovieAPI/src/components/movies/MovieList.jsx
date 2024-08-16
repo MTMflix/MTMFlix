@@ -56,7 +56,7 @@ function MovieList() {
   return (
     <div>
         <>
-        <h1 style={{ marginTop: "4vw", marginLeft:"2vw"}}>MOVIES</h1>
+        <h1 style={{ marginTop: "4vw", marginLeft:"2vw", color: "white"}}>MOVIES</h1>
         <div className="movieGrid" >
             {movieList.map((data) => {
               return <>
