@@ -6,15 +6,7 @@ import MovieList from '../movies/MovieList';
 function Dashboard() {
  return (
   <>
-  <div className="carousel-containter" 
-  style={{ 
-    marginTop: "5vw", 
-    marginLeft: "auto", 
-    marginRight: "auto", 
-    marginBottom: "auto",  
-    width: '775px', 
-    height: '810px' 
-    }} >
+  <div className="carousel-containter" style={{ marginTop: "5vw", marginLeft: "auto", marginRight: "auto", marginBottom: "auto",  width: '775px', height: '810px', color:"white" }}>
     <h1>EDITOR'S PICKS</h1>
     <Carousel>
       <Carousel.Item>

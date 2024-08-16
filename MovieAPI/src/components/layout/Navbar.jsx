@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import MTMflix_logo from './logo/MTMflix_logo.png'
 import SearchBar from './SearchBar';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
+
 
 
 function Navbar(){
@@ -22,6 +24,13 @@ function Navbar(){
                     </a>
                     <h1 className="navbar-brand"><SearchBar setResults={setResults}/></h1>
                     <Nav className="ms-auto">
+                        <NavLink to="/liked-movies" style={{
+                            color: 'fff',
+                            fontWeight: 'bold',
+                            textDecoration: 'none',
+                            paddingRight: '1rem',
+                            marginRight: '1rem',
+                            borderRight:'1px solid #ddd',}}>Liked Movies</NavLink>
                         <NavLink 
                         className='nav-link' 
                         activeClassName='active'

@@ -10,6 +10,8 @@ import MovieList from "./components/movies/MovieList";
 import TopRatedList from "./components/layout/TopRatedList";
 import TopRatedDetails from "./components/layout/TopRatedDetails";
 import SearchResults from "./components/layout/SearchResults";
+import LikedMoviesPage from './components/movies/LikedMoviesPage';
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path="/top-rated" element={<TopRatedList />} />
           <Route path="/movies/:movieId" element={<TopRatedDetails />} />
           <Route path ="/search" element={<SearchResults />}/>
+          <Route path="/liked-movies" element={<LikedMoviesPage />} />
         </Routes>
         
         <Outlet />
